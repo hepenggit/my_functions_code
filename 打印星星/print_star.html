@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>打印星星</title>
+</head>
+
+<body>
+    <script>
+    function forNumPrint(kong = 0, starNum = 0, str = "*") {
+        for (var j = 0; j < kong; j++) {
+            document.write("&nbsp;");
+        }
+        for (var j = 0; j < starNum; j++) {
+            document.write(str);
+        }
+        document.write("<br>");
+    }
+
+    function printStar(val = 0, str = '*') {
+        var half = Math.floor(val / 2);
+        for (var i = 0; i < val; i++) {
+            var starNum = 0;
+            var kong = 0;
+            if (i <= half) {
+                starNum = val - i * 2;
+                kong = i;
+                forNumPrint(kong, starNum, str);
+            } else {
+                starNum = val - (val - i - 1) * 2;
+                kong = val - i - 1;
+                forNumPrint(kong, starNum, str);
+            }
+        }
+    }
+    printStar(9, '*');
+    </script>
+</body>
+
+</html>
